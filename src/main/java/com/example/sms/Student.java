@@ -53,8 +53,7 @@ public class Student {
     nullable = false)
     private Integer age;
 
-    public Student(Long id, String firstName, String lastName, String email, Integer age) {
-        this.id = id;
+    public Student(String firstName, String lastName, String email, Integer age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -68,9 +67,7 @@ public class Student {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+
 
     public String getFirstName() {
         return firstName;
