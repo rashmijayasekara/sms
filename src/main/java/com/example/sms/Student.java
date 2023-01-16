@@ -7,7 +7,12 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Entity(name = "student") // to map to a table javax.persistence
+@Entity(name = "Student") // to map to a table javax.persistence
+@Table(name = "student",
+        uniqueConstraints = {
+        @UniqueConstraint(name = "student_email_unique",columnNames = "email")
+        }
+)
 public class Student {
     @Id
     @SequenceGenerator(
@@ -44,7 +49,8 @@ public class Student {
     )
     private String email;
 
-    @Column(name = "age")
+    @Column(name = "age",
+    nullable = false)
     private Integer age;
 
     public Student(Long id, String firstName, String lastName, String email, Integer age) {
